@@ -1,8 +1,6 @@
-import React, { lazy, Suspense, useState, useEffect } from 'react';
+import React, { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Switch, Route }     from 'react-router-dom';
 import './App.css';
-import PrivateRoute                                   from './components/PrivateRoute';
-import AccessRoute                                    from './components/AccessRoute';
 const SignUpPage = lazy( () => import('./pages/SignUpPage') );
 const SignInPage = lazy( () => import('./pages/SignInPage') );
 const HomePage = lazy( () => import('./pages/HomePage') );
@@ -17,8 +15,8 @@ function App () {
             <Route exact path="/" component={HomePage}/>
             <Route path={['/signup', '/sign_up']} component={SignUpPage}/>
             <Route path={['/signin', '/sign_in', '/login']} component={SignInPage}/>
-            <PrivateRoute path={'/dashboard'} component={DashboardPage} to={'/sign_up'}/>
-            <AccessRoute permissions={['ADMIN']} to={'/'} path={'/admin'} component={AdminPage}/>
+            <Route path={'/dashboard'} component={DashboardPage}/>
+            <Route path={'/admin'} component={AdminPage}/>
           </Switch>
         </Suspense>
       </Router>

@@ -1,6 +1,7 @@
 import React, { useState }         from 'react';
 import { Form, withFormik, Field } from 'formik';
 import * as Yup                    from 'yup';
+import ACTION_TYPES from '../../../actions/actionTypes.js';
 import Input                       from '../Input';
 import Label                       from '../Label';
 import StyledErrorMessage          from '../StyledErrorMessage';

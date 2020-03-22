@@ -1,27 +1,14 @@
-import React                                   from 'react';
-import { withRouter }                          from 'react-router';
-import { Redirect }                            from 'react-router-dom';
-import styles                                  from './SignInPage.module.css';
-import SignInForm                              from '../../components/forms/SignInForm';
-import withContext                             from '../../components/HoCs/withContext.js';
+import React from 'react';
+import {withRouter} from 'react-router';
+import styles from './SignInPage.module.css';
+import SignInForm from '../../components/forms/SignInForm';
 
 const SignInPage = props => {
-
-  const { user, setUser } = props;
-
-  const formSubmitHandler = (user) => {
-    setUser( user );
-  };
-
-  if (user) {
-    return <Redirect to={'/'}/>;
-  }
-
-  return (
-    <div className={styles.container}>
-      <SignInForm onSubmit={formSubmitHandler}/>
-    </div>
-  );
+	return (
+			<div className={ styles.container }>
+				<SignInForm/>
+			</div>
+	);
 };
 
-export default withContext( withRouter( SignInPage ) );
+export default withRouter(SignInPage);

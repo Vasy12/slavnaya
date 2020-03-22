@@ -1,22 +1,16 @@
-import React          from 'react';
-import { withRouter } from 'react-router';
-import { Redirect }   from 'react-router-dom';
-import SignUpForm     from '../../components/forms/SignUpForm';
-import styles         from './SignUpPage.module.scss';
-import withContext    from '../../components/HoCs/withContext.js';
+import React from 'react';
+import {withRouter} from 'react-router';
+import SignUpForm from '../../components/forms/SignUpForm';
+import styles from './SignUpPage.module.scss';
 
 const SignUpPage = (props) => {
-  const { user, setUser } = props;
 
-  if (user) {
-    return <Redirect to={'/'}/>;
-  }
-  return (
-    <div className={styles.container}>
-      <SignUpForm onSubmit={setUser}/>
-    </div>
-  );
+	return (
+			<div className={ styles.container }>
+				<SignUpForm/>
+			</div>
+	);
 
 };
 
-export default withRouter( withContext( SignUpPage ) );
+export default withRouter(SignUpPage);

@@ -1,4 +1,5 @@
 import { put }       from 'redux-saga/effects';
+import ACTION_TYPES from '../actions/actionTypes.js';
 import { loginUser } from '../api/auth.js';
 
 export function * loginUserSaga (action) {

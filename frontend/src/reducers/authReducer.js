@@ -1,3 +1,5 @@
+import ACTION_TYPES from '../actions/actionTypes.js';
+
 const initialState = {
   isFetching: false,
   user: null,

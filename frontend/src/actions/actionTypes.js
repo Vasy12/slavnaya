@@ -8,3 +8,5 @@ const ACTION_TYPES = {
   SIGN_UP_USER_ERROR: Symbol(),
 
 };
+
+export default ACTION_TYPES;

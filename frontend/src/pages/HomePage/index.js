@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { withRouter }       from 'react-router';
-import Navigation           from '../../components/Navigation';
 import { getUsers }         from '../../api/admin.js';
 
 class Index extends Component {
@@ -9,7 +8,6 @@ class Index extends Component {
     return (
       <>
         <h1>Home Page!</h1>
-        <Navigation/>
         <button onClick={() => {
           getUsers()
             .then( ({ data }) => {
